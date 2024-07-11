@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather App</title>
+    <style>
+      body{
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        background-image: url('weathergif.gif');
+        background-size: cover;
+        background-position: top;
+      }
+      .heading{
+        font-family: fantasy;
+        font-size: 450%;
+        color:rgb(13, 0, 255);
+      }
+      .city{
+        padding-left: 35px;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        padding-right: 35px;
+        border-radius: 60px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+        font-size: 20px;
+        border-color: black;
+        border-width:medium;
+        margin-bottom: 40px;
+      }
+      .button{
+        padding-left: 15px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-right: 15px;
+        border-radius: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        cursor: pointer;
+      }
+      #temperature{
+        font-size: 300%;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">Weather Application</h1>
+    <input class="city" placeholder="Enter a City"><br>
+    <button onclick="fun1();" class="button">Get data</button>
+    <button onclick="reset();" class="button">Reset</button>
+    <h1 id="temperature"></h1>
+    <script>
+      function reset(){
+        document.querySelector('#temperature').innerHTML = '';
+        document.querySelector('.city').value = '';
+      }
+      function fun1(){
+        const apiKey = '394898149913474a8ed105730241107'; // Remove the space at the end
+        const weatherAPIEndpoint = 'https://api.weatherapi.com/v1/current.json'; // Correct endpoint for current weather data
+
+        // Example: Fetching weather for London
+        const city = document.querySelector('.city').value;
+
+        fetch(`${weatherAPIEndpoint}?key=${apiKey}&q=${city}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log('Weather data:', data);
+
+            // Extract temperature in Celsius
+            const tempCelsius = data.current.temp_c;
+
+            // Convert Celsius to Fahrenheit
+            const tempFahrenheit = (tempCelsius * 9/5) + 32;
+
+            // Store the temperature in a variable
+            const temperature = `${tempFahrenheit.toFixed(2)} °F`;
+
+            // Display the temperature in the h1 tag
+            if(tempFahrenheit > 75)
+            {
+              document.getElementById('temperature').textContent = `Temperature in ${city}: ${temperature} ☀️🌤️`;
+            }
+            else{
+              document.getElementById('temperature').textContent = `Temperature in ${city}: ${temperature} 🌧️⛈️`;
+            }
+          })
+          .catch(error => {
+            document.getElementById('temperature').textContent = `Error fetching weather: ${error}`;
+            console.error('Error fetching weather:', error);
+          });
+        }
+    </script>
+  </body>
+</html>
