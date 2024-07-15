@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="quotes-generator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body>
+  <h1 class="heading">Quotes Generator</h1>
+  <select class="input" onclick="document.getElementById('author').innerHTML = ''; document.getElementById('quote').innerHTML = '';">
+    <option value="family">Family</option>
+    <option value="marriage">Marriage</option>
+    <option value="life">Life</option>
+    <option value="love">Love</option>
+    <option value="money">Money</option>
+    <option value="movies">Movies</option>
+    <option value="inspirational">Inspirational</option>
+    <option value="leadership">Leadership</option>
+    <option value="humor">Humor</option>
+    <option value="happiness">Happiness</option>
+    <option value="government">Government</option>
+    <option value="funny">Funny</option>
+    <option value="history">History</option>
+    <option value="friendship">Friendship</option>
+  </select><br>
+    <button id="generate-quote" onclick="generateQuote();">Generate Quote</button>
+    <p id="quote">thiru</p>
+    <p id="author">thiru</p>
+
+    <script src="quotes-generator.js"></script>
+</body>
+</html>
