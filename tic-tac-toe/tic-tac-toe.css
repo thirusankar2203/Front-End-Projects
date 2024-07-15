@@ -1,0 +1,50 @@
+body{
+  background-color: black;
+  background-image: url('age.jpg');
+  background-repeat:round;
+  background-size: 1270px;
+  align-items: center;
+  text-align: center;
+}
+p{
+  color: white;
+}
+.heading{
+  color: whitesmoke;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 90px;
+  font-style: oblique;
+}
+.out{
+  color: whitesmoke;
+  font-size: 60px;
+  font-family: "Luckiest Guy", cursive;
+}
+.scores{
+  color: whitesmoke;
+  border-color: white;
+  border-radius: 20px;
+}
+button{
+  background-color: black;
+  font-size: 60px;
+}
+.b1, .b2, .b4, .b5, .b7, .b8{
+  margin-right: 15px;
+}
+.b3, .b6, .b9{
+  margin-bottom: 30px;
+}
+.s1, .s2, .s3{
+  color: white;
+  font-family:fantasy;
+  font-size: 40px;
+}
+.s1, .s2{
+  margin-right: 50px;
+}
+.reset{
+  color: white;
+  font-family:fantasy;
+  font-size: 40px;
+}
