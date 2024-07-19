@@ -1,0 +1,87 @@
+body{
+  background-image: url('batman1.jpg');
+  background-size: 1280px;
+  background-repeat: no-repeat;
+  background-blend-mode: soft-light;
+  background-size: cover;
+  align-items: center;
+  text-align: center;
+
+}
+
+.heading{
+  font-family: "Rammetto One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 70px;
+  color: aliceblue;
+}
+
+#movie-title{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 28px;
+  padding-right: 28px;
+  border: 2px solid rgb(221, 238, 39);
+  border-radius: 5px;
+  text-align: center;
+  font-family: monospace;
+}
+
+#movie-title:hover{
+  border-color: rgb(255, 65, 65);
+  border-radius: 10px;
+  border-width: 3px;
+}
+
+button{
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border: 3px solid black;
+  transition: transform 0.1s ease;
+  margin-left: 20px;
+}
+
+button:hover{
+  transform: scale(1.3);
+  border-color: rgb(255, 65, 65);
+}
+
+#title{
+  color: aliceblue;
+  border: 4px solid black;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 60px;
+}
+
+#director, #error{
+  color: aliceblue;
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#actors{
+  color: aliceblue;
+  font-size: 40px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#plot{
+  color: aliceblue;
+  font-size: 25px;
+  font-family: monospace;
+  line-height: 1.5;
+}
+
+img{
+  border: 5px solid rgb(255, 255, 255);
+  border-radius: 8px;
+  transition: transform 0.1s ease;
+}
+
+img:hover{
+  transform: scale(1.2);
+}
+
